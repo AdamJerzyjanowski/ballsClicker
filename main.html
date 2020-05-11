@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Clicker Ball</title>
+</head>
+
+<body>
+    <div class="contiener">
+<h2>Super Balls Game</h2>
+    <p>Click to anywhere on white squer to make a ball </br>Clcik to the ball to destroy it</p>
+    <p>test your computer make a few ball</p>
+    
+    <form onsubmit="testWebsite(); return false" action=#>
+        <input type="text" id="countOfTheBalls" name="how much you need balls?"></input>
+        <input class="btn" type="submit" id="testWeb" value="Test"></input>
+        <a class="btn" href="main.html">Restet</a>
+    </form>
+    <div class="selectLevel">
+    <p>chose your level</p>
+    <circle cx="250" cy="750" r="50" fill="pink"></circle>
+    <form>
+        <input type="radio" id="easy" name="level" value="1">
+        <label for="easy">easy</label>
+        <input  type="radio" id="normal" name="level" value="2">
+        <label for="normal">normal</label>
+        <input type="radio" id="hard" name="level" value="3">
+        <label for="hard">hard</label>
+        <input type="radio" id="VeryHard" name="level" value="4">
+        <label for="VeryHard">extremaly</label></br>
+        <input type="button" id = "btn" value="change"></input>
+    </form>
+    </div>
+    </div>
+    <div id="blood" class="blood">
+        
+        <canvas id="balls" width="800" height="400">
+            Sorry, your browser does not support canvas.
+        </canvas>
+    </div>
+    <p id="point"></p>
+    <script src="scriptClicker.js"></script>
+</body>
+
+</html>
