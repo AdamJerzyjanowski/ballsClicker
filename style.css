@@ -1,11 +1,240 @@
-body{
-    background-color: #8b8b8b;
+@import url('https://fonts.googleapis.com/css2?family=Codystar:wght@300;400&display=swap');
+:root {
+    --bg-color: #ddf7f8;
+    --text-color:black;
+    --active-color-bg:#03e9f4;
+    --active-text-color:#ffffff;
+    --border-color:var(--active-color-bg);
+    --shadow-color: rgba(0,0,0,0.46);
+    --button-color: #1fd869;
 }
+
+body{
+    font-family:  'Codystar';
+    background-color: var(--bg-color);
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.neons {
+  font-family: 'Codystar';
+  margin-top: 2px;
+  text-align: center;
+  color: var(--active-color-bg);
+  font-size: 2em;
+}
+
 canvas {
-    border: 1px solid #ffffff;
-    box-shadow:23px 23px 74px 1px rgba(0,0,0,0.46);
+    border: 2px solid var(--border-color);
+    box-shadow:3px 3px 10px 1px var(--shadow-color);
 }
 #blood{
-    margin: 20px;
-   background-color: #8b8b8b; 
+   padding: 20px;
+    display: flex;
+    align-items: center;
+     margin: 20px;
+   background-color: var(--bg-color); 
 }
+.pointsTable{
+    border: 2px solid var(--border-color);
+    box-shadow: 3px 3px 10px 1px var(--shadow-color);
+    width: 800px;
+    height: 800px;
+    overflow: auto;
+    text-align: justify;
+    margin: 40px;
+ }
+
+ .pointsTable h2{
+    text-align: center;
+    font-size: 3em;
+ }
+ .pointsTable ol{
+  
+}
+
+form{
+    font-family:  'Codystar';
+}
+.thisColor{
+    color: var(--border-color);
+}
+
+.selectLevel, .formTestWebsite, #point{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.selectLevel form{
+  margin-top: 15px;
+}
+#countOfTheBalls{
+    padding: 5px;
+    font-family:  'Arial';
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+.btn{
+    font-family:  'Codystar';
+    background-color: transparent;
+    border: none;
+    color: var(--button-color);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px;
+    padding-left: 10px;
+}
+input .btn{
+    width: 100%;
+    height: 100%;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    overflow: hidden;
+}
+#btn1{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+a {
+    margin: 4px;
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    color: var(--active-color-bg);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: capitalize;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 2px;
+  }
+    
+label{
+  color: var(--button-color);
+    
+}
+input[type=number]{
+  border: 1px solid var(--active-color-bg);
+  -moz-appearance: textfield;
+  background: var(--active-color-bg);  
+  color: var(--bg-color);
+  cursor:pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button:before,
+input[type=number]::-webkit-inner-spin-button:after {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#countOfTheBalls {
+  background-color: var(--bg-color);
+  border: 1px solid var(--active-color-bg);
+  color: var(--shadow-color);
+  width: 220px;
+}
+
+  
+ a:hover, .btn:hover, input[type=radio]:hover, label:hover, input[type=number]:hover {
+    cursor:pointer;
+    background: var(--active-color-bg);
+    color: var(--active-text-color);
+    font-family: Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px var(--active-color-bg),
+                0 0 15px var(--active-color-bg),
+                0 0 25px var(--active-color-bg),
+                0 0 50px var(--active-color-bg);
+  }
+  input[type=number]:hover{
+    text-transform:none;
+    letter-spacing: 0px;
+  }
+  
+   a span, input .btn {
+    position: absolute;
+    display: block;
+  }
+  
+  a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--active-color-bg));
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+ a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--active-color-bg));
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+ a span:nth-child(3), input .b {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, var(--active-color-bg));
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+ a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, var(--active-color-bg));
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+

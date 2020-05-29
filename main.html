@@ -9,40 +9,74 @@
 </head>
 
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
     <div class="contiener">
-<h2>Super Balls Game</h2>
-    <p>Click to anywhere on white squer to make a ball </br>Clcik to the ball to destroy it</p>
-    <p>test your computer make a few ball</p>
-    
-    <form onsubmit="testWebsite(); return false" action=#>
-        <input type="text" id="countOfTheBalls" name="how much you need balls?"></input>
-        <input class="btn" type="submit" id="testWeb" value="Test"></input>
-        <a class="btn" href="main.html">Restet</a>
-    </form>
-    <div class="selectLevel">
-    <p>chose your level</p>
-    <circle cx="250" cy="750" r="50" fill="pink"></circle>
-    <form>
-        <input type="radio" id="easy" name="level" value="1">
-        <label for="easy">easy</label>
-        <input  type="radio" id="normal" name="level" value="2">
-        <label for="normal">normal</label>
-        <input type="radio" id="hard" name="level" value="3">
-        <label for="hard">hard</label>
-        <input type="radio" id="VeryHard" name="level" value="4">
-        <label for="VeryHard">extremaly</label></br>
-        <input type="button" id = "btn" value="change"></input>
-    </form>
+        <div class="neons">
+            <h1>Super Balls Game</h1>
+        </div>
+        <p class="instruction">Click anywhere <span class="thisColor">at square with this color</span> to create a ball
+            </br>Click the ball to destroy it. You will win game when all balls destroyed.</br>
+            You will get a point with every destroyed ball.</p>
+        <div class="selectLevel">
+            <p>chose your level:</p>
+            <circle cx="250" cy="750" r="50" fill="pink"></circle>
+            <form>
+                <input type="radio" id="easy" name="level" value="1">
+                <label for="easy">easy</label>
+                <input type="radio" id="normal" name="level" value="2">
+                <label for="normal">normal</label>
+                <input type="radio" id="hard" name="level" value="3">
+                <label for="hard">hard</label>
+                <input type="radio" id="VeryHard" name="level" value="4">
+                <label for="VeryHard">extreme</label></br>
+                </br>
+            </form>
+        </div>
     </div>
-    </div>
+
+    <p class="testComp">create a few balls. How many balls do you need?</p>
+
+    <form class="formTestWebsite" onsubmit="testWebsite(); return false" action=#>
+        <input type="number" id="countOfTheBalls" step="1" placeholder="How many balls do you need?"></input>
+
+        <a> <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <input class="btn" type="submit" id="testWeb" value="Create balls">
+
+            </input>
+        </a>
+
+
+        <a class="btn" href="main.html">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>Reset</a>
+   <!--    <a class="btn" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>Finish</a>--> 
+    </form>
+
     <div id="blood" class="blood">
-        
+
         <canvas id="balls" width="800" height="400">
             Sorry, your browser does not support canvas.
         </canvas>
     </div>
-    <p id="point"></p>
+    <div class="point" id="point"></div>
+    <div class="pointsTable">
+        <h2>Ranking Table</h2>
+        <ol id="players"></ol>
+    </div>
+
+    <script src="connectionDB.js"></script>
     <script src="scriptClicker.js"></script>
+
 </body>
 
 </html>
