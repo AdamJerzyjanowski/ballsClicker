@@ -32,7 +32,7 @@ mongoose.connect(process.env.MONGODB_URI || dbConfig.url, {
 
 // define a simple route
 app.get('/', (req, res) => {
-    res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
+    res.sendfile(__dirname + '/index.html');
 });
 
 // listen for requests
