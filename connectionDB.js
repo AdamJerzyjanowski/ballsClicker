@@ -15,7 +15,6 @@ fetch(url)
     
   let players = data;
   return players.map(function(player) {
-   // console.log(player);
     let li = createNode('li'),
         span = createNode('span');
     span.innerHTML = `${player.name} ${player.points}`;
@@ -36,7 +35,7 @@ function postPlayer(name, points){
         method: 'POST', 
         body:  JSON.stringify(data),
         headers: {
-            "Content-Type": "application/json" //lub używając powyższej opisanego Headers()
+            "Content-Type": "application/json" 
         }
 
     });
