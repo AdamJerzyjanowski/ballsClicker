@@ -1,14 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-//var cors = require('cors');
+var cors = require('cors');
 
 const app = express();
-//app.use(cors());
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
-app.use('/static', express.static(__dirname + '/static'));
+app.use('/', express.static(__dirname));
 
 // Require Notes routes
 require('./app/routes/note.routes.js')(app);
