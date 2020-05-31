@@ -8,7 +8,7 @@ function append(parent, el) {
 
 
 const ul = document.getElementById('players');
-const url = 'http://localhost:3000/players';
+const url = 'https://balls-clicker.herokuapp.com/players';
 fetch(url)
 .then((resp) => resp.json())
 .then(function(data) {
