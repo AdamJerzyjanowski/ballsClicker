@@ -33,7 +33,7 @@ function Ball(x, y) {
     this.y = y;
     this.dx = Math.random() * factordx - 1;
     this.dy = Math.random() * factordy - 1;
-    this.radius = Math.random() * factorRadius + 5;
+    this.radius = Math.random() * factorRadius+8;
     this.color = '#' + Math.floor(Math.random() * 16777215).toString(16);
     this.draw = function () {
 

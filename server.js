@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
-
+app.use('/static', express.static(__dirname + '/static'));
 
 // Require Notes routes
 require('./app/routes/note.routes.js')(app);
