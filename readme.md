@@ -1,4 +1,4 @@
-#Super Balls Game
+# Super Balls Game
 You can create how many balls do you want, next you should destroy them. If you don't hit the ball you will create new ball. Can you destroy them all? Will you be better than your friends? This game is saving your score in databasse.
 
 **Technologies:** Node js., Express, JavaScript, Mongo DB, CSS, HTML
@@ -11,5 +11,9 @@ You can create how many balls do you want, next you should destroy them. If you 
   * How to use a new font to the CSS
   * How to deploy app with heroku
 
-*Screenshots*
-![Screenshots 1]("screenshots/1.png")
+**Screen shots**
+![Screenshots 1](./screenshots/1.png)
+
+![Screenshots 1](./screenshots/2.png)
+
+![Screenshots 1](./screenshots/3.png)
