@@ -28,7 +28,7 @@ fetch(url)
 
 function postPlayer(name, points){
 
-    const urlpost =  "http://localhost:3000/addPlayer";
+    const urlpost =  "https://balls-clicker.herokuapp.com/addPlayer";
     let data =  { name: name, points: points }
     // Create our request constructor with all the parameters we need
     var request = new Request(urlpost, {
