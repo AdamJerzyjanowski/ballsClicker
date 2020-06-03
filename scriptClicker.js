@@ -212,6 +212,6 @@ function  level(selectedValue){
     default:
         break;
     }
-    console.log(factordx+" "+factorRadius)
+    
 }
 moveBall();
