@@ -2,12 +2,13 @@ var canvas = document.getElementById('balls');
 var ctx = canvas.getContext("2d");
 
 
-var factordy;
-var factordx;
-var factorRadius;
+var factordy= 1;
+var factordx= 1;
+var factorRadius = 40;
 var level;
 var startText = true;
 var finishText = false;
+var k = 1;
 
 const btn = document.querySelector('#btn1');
 $('input[type="radio"]').on('click change', function(e) {
@@ -33,7 +34,7 @@ function Ball(x, y) {
     this.y = y;
     this.dx = Math.random() * factordx - 1;
     this.dy = Math.random() * factordy - 1;
-    this.radius = Math.random() * factorRadius+8;
+    this.radius = Math.random() * factorRadius + 8;
     this.color = '#' + Math.floor(Math.random() * 16777215).toString(16);
     this.draw = function () {
 
@@ -113,11 +114,12 @@ function testWebsite() {
 }
 function makeTheBall(xClick, yClick) {
     if (!startText) {
-        makeBalls++;
-        var ball = new Ball(xClick, yClick);
-        if (ball.radius <= xClick) ball = new Ball(xClick + ball.radius, yClick);
-        balls.push(ball);
-        console.log(ball);
+            if(!finishText){
+                makeBalls++;
+                var ball = new Ball(xClick, yClick);
+            if (ball.radius <= xClick) ball = new Ball(xClick + ball.radius, yClick);
+                balls.push(ball);
+        }
     }
 }
 function makeStartText(text) {
@@ -138,7 +140,7 @@ var countPoints = deathBalls;
 function makeFinshText() {
     setName();
    points = stringPointsInerToHTML();
-   countPoints = deathBalls;
+   countPoints = deathBalls*k;
     var endTekst = new Text("Congratulations! " + name + " your points: " + countPoints).draw+ ". Reset game.";
     
 }
@@ -184,31 +186,32 @@ function  level(selectedValue){
         factordx = 1;
         factorRadius = 30;
         startText = false;
+        k = 1;
         break;
     case "2":// normal
         factordy = 4;
         factordx = 4;
-        factorRadius = 25;
+        factorRadius = 15;
         startText = false;
+        k = 2;
         break;
     case "3":// hard
         factordy = 7;
         factordx = 7;
-        factorRadius = 20;
+        factorRadius = 10;
         startText = false;
+        k = 3;
         break;
     case "4"://extremaly
         factordy = 11;
         factordx = 11;
-        factorRadius = 10;
+        factorRadius = 5;
         startText = false;
+        k = 4;
         break;
     default:
-        factordy = 1;
-        factordx = 1;
-        factorRadius = 30;
-        startText = false;
         break;
     }
+    console.log(factordx+" "+factorRadius)
 }
 moveBall();
